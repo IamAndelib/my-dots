@@ -1,0 +1,16 @@
+configuration {
+    modi: "drun";
+    display-drun: "🚀 Apps ";
+    terminal: "ghostty";
+    show-icons: true;
+    font: "FiraCode Nerd Font Medium 11";
+    icon-theme: "Papirus";
+    drun-display-format: "{icon} {name}";
+    disable-history: false;
+    sort: true;
+    hide-scrollbar: true;
+    location: 0;
+}
+
+@theme "catppuccin-mocha"
+

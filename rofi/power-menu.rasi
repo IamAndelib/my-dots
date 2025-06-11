@@ -1,0 +1,102 @@
+/* ~/.config/rofi/catppuccin-mocha.rasi */
+* {
+    /* Catppuccin Mocha Colors */
+    bg-col:          #1e1e2e;
+    bg-col-light:    #1e1e2e;
+    border-col:      #1e1e2e;
+    selected-col:    #f38ba8;  /* Changed from blue to red */
+    blue:            #89b4fa;
+    fg-col:          #cdd6f4;
+    fg-col2:         #f38ba8;
+    grey:            #6c7086;
+    
+    /* Layout */
+    width:           600;
+    font:           "JetBrainsMono Nerd Font Bold 12";
+    border-radius:   0px;
+}
+
+/* ========== Only changed these sections ========== */
+element selected {
+    background-color:            @selected-col;  /* Now uses red */
+    text-color:                  @bg-col;
+    border:                      0px;
+    border-radius:               6px;
+    border-color:                @border-col;
+}
+
+element.selected.normal {
+    background-color:            @selected-col;  /* Now uses red */
+    text-color:                  @bg-col;
+}
+
+element.selected.active {
+    background-color:            @selected-col;  /* Now uses red */
+    text-color:                  @bg-col;
+}
+/* ========== Rest of config remains unchanged ========== */
+
+window {
+    transparency:                "real";
+    background-color:            @bg-col;
+    text-color:                  @fg-col;
+    border-color:                @bg-col;
+    width:                       200px;
+    location:                    center;
+    anchor:                      center;
+}
+
+inputbar {
+    enabled:                     false;
+}
+
+listview {
+    background-color:            @bg-col;
+    columns:                     1;
+    lines:                       4;
+    spacing:                     0px;
+    cycle:                       false;
+    dynamic:                     true;
+    layout:                      vertical;
+    padding:                     15px;
+    margin:                      0px;
+}
+
+mainbox {
+    background-color:            @bg-col;
+    children:                    [ listview ];
+    spacing:                     0px;
+    padding:                     0px;
+}
+
+element {
+    background-color:            @bg-col;
+    text-color:                  @fg-col;
+    orientation:                 horizontal;
+    border-radius:               0px;
+    padding:                     8px;
+    margin:                      2px 0px;
+}
+
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        24px;
+    cursor:                      inherit;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    expand:                      true;
+    horizontal-align:            0;
+    vertical-align:              0;
+    margin:                      0px 2.5px 0px 2.5px;
+    cursor:                      inherit;
+}
+
+element.normal.active {
+    background-color:            @fg-col2;
+    text-color:                  @bg-col;
+}
+

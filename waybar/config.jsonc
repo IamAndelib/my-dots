@@ -1,0 +1,134 @@
+{
+  "layer": "bottom",
+  "position": "bottom",
+  "margin": "1px 2px 2px 2px",
+  "modules-left": ["custom/weather", "clock", "network", "bluetooth", "mpris"], 
+  "modules-center": [ "hyprland/workspaces"],
+  "modules-right": [
+    "backlight",
+    "pulseaudio",
+    "cpu",
+    "memory",
+    "temperature",
+    "battery",
+    "custom/power"
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+        "1": "⬤",
+        "2": "⬤",
+        "3": "⬤",
+        "4": "⬤",
+        "5": "⬤",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "10": "10",
+        "active": "󰊠"
+    },
+    "interval": 1,
+    "on-click": "activate",
+    "sort-by-number": true
+},
+
+  "bluetooth":{
+    "on-click": "~/.config/hypr/scripts/connection.sh bluetooth" 
+  },
+
+  "network": {
+    "format-wifi": "  {essid}",
+    "format-disconnected": "󰤭  Disconnected",
+    "tooltip-format": "{bandwidthDownBits} ↓↑ {bandwidthUpBits}",
+    "on-click": "~/.config/hypr/scripts/connection.sh wifi",
+    "interval": 1
+  },
+
+  "clock": {
+    "format": "<span foreground='#f5c2e7'>⏳ </span>{:%a %b %d | %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "on-click": "xdg-open https://calendar.google.com/"
+  },
+
+  "custom/weather": {
+    "exec": "~/.config/hypr/scripts/weather.py",
+    "return-type": "json",
+    "interval": 60,
+    "tooltip": true,
+    "on-click": "xdg-open https://openweathermap.org/"
+  },
+
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "tooltip": false
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "  Muted",
+    "format-icons": { "default": ["", "", ""] },
+    "on-click": "~/.config/hypr/scripts/launch-pavucontrol.sh" // Use full path if issues
+  },
+
+  "memory": {
+    "format": "󰘚 {}%",                          // Main bar display (percentage)
+    "tooltip": true,                             // Enable tooltip
+    "tooltip-format": "{used:0.1f}G / {total:0.1f}G",  // Tooltip content
+    "interval": 10
+},
+
+  "cpu": {
+    "format": " {usage}%",
+    "interval": 10,
+    "on-click": "~/.config/hypr/scripts/cpu.sh" // Ensure script exists + executable
+  },
+
+  "temperature": {
+    "format": " {temperatureC}°C",
+    "critical-threshold": 80,
+    "tooltip": false,
+    "interval": 10
+  },
+
+  "battery": {
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "format": "<span size='13000' foreground='#a6e3a1'>{icon}</span> {capacity}%",
+    "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon}</span> {capacity}%",
+    "format-critical": "<span size='13000' foreground='#E38C8F'>{icon}</span> {capacity}%",
+    "format-charging": "<span size='13000' foreground='#B1E3AD'>⚡</span>{capacity}%",
+    "format-plugged": "<span size='13000' foreground='#B1E3AD'>⚡</span>{capacity}%",
+    "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon}</span> {time}",
+    "format-full": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip-format": "{time}",
+    "interval": 1 // Changed from 1 to reduce resource usage
+  },
+
+  "custom/power": {
+    "format": "",  // Unicode power icon
+    "tooltip": false,
+    "on-click": "~/.config/hypr/scripts/logout.py"
+ },
+
+  "mpris": {
+    "format": "{player_icon} {title} - {artist}",
+    "tooltip-format":"{dynamic}",
+    "player-icons": {
+        "spotify": "",
+        "default": "🎵"
+    },
+    "interval": 1,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "max-length": 25
+  }
+
+}
+
+
