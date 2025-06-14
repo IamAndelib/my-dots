@@ -7,9 +7,9 @@
     fg-col: #cdd6f4;
     fg-col2: #f38ba8;
     grey: #6c7086;
-    width: 30%;
-    height: 20%;
-    font: "FiraCode Nerd Font Medium 14";
+    width: 35%;
+    height: 25%;
+    font: "FiraCode Nerd Font Medium 16";
 }
 
 element-text, element-icon , mode-switcher {
@@ -18,9 +18,9 @@ element-text, element-icon , mode-switcher {
 }
 
 window {
-    border: 3px;
     border-color: @border-col;
     background-color: @bg-col;
+    transparency: "real";
 }
 
 mainbox {
@@ -60,6 +60,8 @@ listview {
     margin: 10px 0px 0px 60px;
     columns: 1;
     background-color: @bg-col;
+    cycle: false;
+    dynamic: true;
 }
 
 element {
@@ -69,7 +71,7 @@ element {
 }
 
 element-icon {
-    size: 25px;
+    size: 30px;
 }
 
 element selected {

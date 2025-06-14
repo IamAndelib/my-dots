@@ -35,6 +35,23 @@
 },
 
   "bluetooth":{
+    "format": "{icon} {status}",
+    "format-disabled": "{icon} disabled",
+    "format-off": "{icon} off",
+    "format-on": "{icon} on",
+    "format-connected": "{icon} connected",
+
+    "tooltip": true,
+    "tooltip-format-on": "{controller_alias}",
+    "tooltip-format-off": "{}",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-connected-battery": "{device_alias} ({device_battery_percentage}%)",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias} ({device_battery_percentage}%)",
+    "format-icons": {
+        "headphones": "",
+        "default": ""
+    },
     "on-click": "~/.config/hypr/scripts/connection.sh bluetooth" 
   },
 
@@ -49,7 +66,7 @@
   "clock": {
     "format": "<span foreground='#f5c2e7'>⏳ </span>{:%a %b %d | %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "on-click": "xdg-open https://calendar.google.com/"
+    "on-click": "gnome-calendar"
   },
 
   "custom/weather": {
@@ -57,7 +74,7 @@
     "return-type": "json",
     "interval": 60,
     "tooltip": true,
-    "on-click": "xdg-open https://openweathermap.org/"
+    "on-click": "mousam"
   },
 
   "backlight": {
@@ -69,8 +86,12 @@
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-muted": "  Muted",
-    "format-icons": { "default": ["", "", ""] },
-    "on-click": "~/.config/hypr/scripts/launch-pavucontrol.sh" // Use full path if issues
+    "format-bluetooth": "{icon} {volume}%",
+    "format-bluetooth-muted": "{icon}  ",
+    "format-icons":{
+        "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
   },
 
   "memory": {
@@ -83,7 +104,7 @@
   "cpu": {
     "format": " {usage}%",
     "interval": 10,
-    "on-click": "~/.config/hypr/scripts/cpu.sh" // Ensure script exists + executable
+    "on-click": "~/.config/hypr/scripts/cpu.sh"
   },
 
   "temperature": {

@@ -11,7 +11,6 @@
     grey:            #6c7086;
     
     /* Layout */
-    width:           600;
     font:           "JetBrainsMono Nerd Font Bold 12";
     border-radius:   0px;
 }
@@ -58,8 +57,7 @@ listview {
     cycle:                       false;
     dynamic:                     true;
     layout:                      vertical;
-    padding:                     15px;
-    margin:                      0px;
+    padding:                     10px;
 }
 
 mainbox {
@@ -91,7 +89,6 @@ element-text {
     expand:                      true;
     horizontal-align:            0;
     vertical-align:              0;
-    margin:                      0px 2.5px 0px 2.5px;
     cursor:                      inherit;
 }
 
