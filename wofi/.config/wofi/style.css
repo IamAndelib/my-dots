@@ -1,0 +1,76 @@
+* {
+    all: unset;
+    font-family: "FiraCode Nerd Font", monospace;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+window {
+    background-color: rgba(30, 30, 46, 0.7); /* Mocha base with transparency */
+    border-radius: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Input box styling */
+
+#input {
+    background-color: transparent;
+    color: #cdd6f4;
+    padding: 12px 10px; /* increased top/bottom padding */
+    margin-bottom: 16px;
+
+    /* your existing underline line */
+    background-image: linear-gradient(to right, transparent 3%, #f38ba8 3%, #f38ba8 97%, transparent 97%);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 2px;
+}
+
+
+/* Optional: search icon color */
+#input image {
+    color: #f38ba8;
+    margin: 0 5px;
+}
+
+/* Entry styling */
+#entry {
+    padding: 6px 10px;
+    margin: 3px 7px;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #cdd6f4;
+}
+
+#entry:selected {
+    background-color: #89b4fa;
+    color: #1e1e2e;
+}
+
+#entry image {
+    margin-right: 10px;
+}
+
+/* Remove separator lines between entries if present */
+separator {
+    background-color: transparent;
+}
+
+/* Scroll container cleanup */
+scrolledwindow {
+    border: none;
+}
+
+/* Minimal Catppuccin Mocha-style scrollbar */
+scrollbar {
+    background-color: transparent;
+    margin: 0;
+}
+
+scrollbar slider {
+    background-color: rgba(137, 180, 250, 0.5); /* Blue semi-transparent */
+    border-radius: 6px;
+    margin: 0 3px;
+}
+

@@ -1,0 +1,200 @@
+@import "mocha.css";
+
+* {
+    font-family: "FiraCode Nerd Font", monospace;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+tooltip {
+    background-color: @base;
+    opacity: 0.8;
+    color: @text;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+window#waybar {
+    background: transparent;
+    background-color: alpha(@base, 0.7);
+    color: @overlay2;
+}
+
+/* Module container styling */
+
+#workspaces,
+#bluetooth,
+#network,
+#custom-weather,
+#backlight,
+#pulseaudio,
+#cpu,
+#temperature,
+#battery,
+#clock,
+#memory,
+#custom-power{
+    margin: 1px 5px;
+    padding: 0 5px;
+    background-color: transparent;
+}
+
+/* Power menu alignment & color */
+#custom-power {
+    padding: 0 15px 0 11px;
+    border-radius: 50%;
+    background-color: transparent;
+    color: @pink;
+}
+
+#custom-power:hover {
+    background-color: alpha(@red, 0.7);
+    color: @base;
+}
+
+
+/* Workspaces hover & active effects */
+#workspaces button {
+    color: @flamingo;
+    border-radius: 0;
+}
+
+
+#workspaces button:hover {
+    border-radius: 50%;
+    background: none;
+    color: @pink;
+}
+
+
+#workspaces button.active {
+    color: @mauve;
+    background-color: transparent;
+}
+
+#workspaces button.active:hover {
+    background: none;
+    color: @blue;
+    border-radius: 50%;
+}
+
+#workspaces button.urgent {
+    animation: pulse 1s infinite ease-in-out;
+    border-radius: 50%;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: alpha(@red, 0.8);
+        color: @base;
+  }
+    100% {
+        background-color: transparent;
+        color: @text;
+  }
+}
+
+#memory {
+    color: @lavender;
+}
+
+/* Bluetooth status styling */
+#bluetooth {
+    color: @surface1;
+}
+#bluetooth.on {
+    color: @lavender;
+}
+#bluetooth.connected {
+    color: @lavender;
+}
+
+
+/* Network with bandwidth */
+#network {
+    color: @yellow;
+}
+#network.disconnected {
+    color: @surface1;
+}
+
+
+/* Other module colors */
+#backlight { color: @sapphire; }
+#pulseaudio { color: @blue; }
+#cpu { color: @peach; }
+#temperature { color: @red; }
+#battery { color: @green; }
+#clock { color: @maroon; }
+
+
+/* Module hover effects */
+#bluetooth:hover,
+#network:hover,
+#backlight:hover,
+#pulseaudio:hover,
+#cpu:hover,
+#temperature:hover,
+#custom-weather:hover,
+#battery:hover,
+#clock:hover,
+#custom-power-menu:hover,
+#memory:hover,
+#mpris:hover{
+    background-color: alpha(@rosewater, 0.1);
+    border-radius: 8px;
+
+}
+
+#custom-notification{
+ 
+    border-radius: 8px;
+    padding: 0 16px 0 12px;
+    margin: 0 5px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+#custom-notification:hover{
+    background-color: alpha(@blue, 0.7);
+    color: @base;      
+}
+
+#custom-notification.notification-history-active {
+    color: #50fa7b;
+    animation: notification-pulse 2s ease-in-out infinite;
+}
+
+@keyframes notification-pulse {
+    0% {
+        background-color: alpha(@red, 0.8);
+        color: @base;
+  }
+    100% {
+        background-color: transparent;
+        color: @text;
+  }
+}
+
+#custom-mpris,
+#mpris {
+    color: @green; 
+    background: transparent;
+    padding: 0 5px;
+    border-radius: 8px;
+    margin: 0 5px;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-weight: 400;
+}
+
+#mpris.paused {
+    opacity: 0.6;
+}
+
+#mpris.playing {
+    opacity: 1;
+    font-style: italic;
+}
+
+
